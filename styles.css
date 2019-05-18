@@ -11,6 +11,7 @@ html {
 }
 
 .header {
+  color: #00acee;
   text-align: center;
   margin: auto;
   margin-top: 50px;
@@ -29,7 +30,7 @@ input.search {
   margin: 0;
   text-align: center;
   outline: 0;
-  border: 10px solid #F7F7F7;
+  border: 0.5px solid #00acee;
   width: 120%;
   left: -10%;
   position: relative;
