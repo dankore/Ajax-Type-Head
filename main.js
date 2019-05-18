@@ -5,6 +5,7 @@ fetch(endpoint)
 .then(blob => blob.json())
 .then(data => cities.push(...data)) 
 
+// Find matches
 function findMatches(wordToMatch, cities) {
     return cities.filter(place => {
         const regex = new RegExp(wordToMatch, 'gi');
@@ -12,9 +13,29 @@ function findMatches(wordToMatch, cities) {
     })
 }
 
+// Insert comma 
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+// Display matches
 function displayMatches() {
     const matchArray = findMatches(this.value, cities)
-    console.log(matchArray)
+    const html = matchArray.map(place => {
+        const regex = new RegExp(this.value, 'gi')
+        const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`)
+        const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`)
+        return `
+        <ul>
+            <li>
+             <span class="name"> ${cityName},  ${stateName} </span>
+             <span class="population"> ${numberWithCommas(place.population)} </span>
+            </li>
+        </ul>
+        `
+    }).join('');
+    
+    suggestions.innerHTML = html
 }
 
 const inputSearch = document.querySelector('.search')
