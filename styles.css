@@ -30,7 +30,7 @@ input.search {
   margin: 0;
   text-align: center;
   outline: 0;
-  border: 0.5px solid #00acee;
+  border: 3px solid #00acee;
   width: 120%;
   left: -10%;
   position: relative;
@@ -76,7 +76,7 @@ span.population {
 }
 
 .hl {
-  background: #ffc600;
+  background: #00acee;
 }
 
 .twitter {
