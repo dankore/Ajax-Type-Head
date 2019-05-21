@@ -44,3 +44,10 @@ const suggestions = document.querySelector('.suggestions')
 inputSearch.addEventListener('change', displayMatches)
 inputSearch.addEventListener('keyup', displayMatches)
 
+
+
+// document.querySelector('.search').addEventListener('focus', (event) => {
+// //   event.target.style.background = 'red'; 
+//   suggestions.style.fontSize = '40px'
+// // console.log(event)
+// });

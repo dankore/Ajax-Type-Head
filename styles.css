@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-  background: white;
+  background: #48dbfb;
   font-family: 'helvetica neue';
   font-size: 20px;
   font-weight: 200;
@@ -11,7 +11,7 @@ html {
 }
 
 .header {
-  color: #00acee;
+  color: #fff;
   text-align: center;
   margin: auto;
   margin-top: 50px;
@@ -81,6 +81,9 @@ span.population {
 
 .twitter {
   text-align: center;
-  color: #00acee;
-  
+  color: #fff;
+}
+
+a {
+  color: #fff;
 }
