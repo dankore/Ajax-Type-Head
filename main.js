@@ -35,25 +35,18 @@ function displayMatches() {
         `
     }).join('');
     
-    suggestions.innerHTML = html
+    if (!(inputSearch.value === '')) {
+        suggestions.innerHTML = html
+    } else { suggestions.innerHTML = `
+        <ul>
+             <li>Filter for a city or a state
+        </ul>
+    ` }
 }
 
 const inputSearch = document.querySelector('.search')
 const suggestions = document.querySelector('.suggestions')
 
-inputSearch.addEventListener('change', displayMatches)
-inputSearch.addEventListener('keyup', displayMatches)
-
-
-// Hide search results if no value in input tag
-
-inputSearch.addEventListener('blur', hideSearchResult)
-
-function hideSearchResult() {
-    if (inputSearch.value === '') {
-       document.location.reload(true)
-    }
-}
-
-
+inputSearch.addEventListener('input', displayMatches)
+inputSearch.addEventListener('input', displayMatches)
 
