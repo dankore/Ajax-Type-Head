@@ -45,9 +45,15 @@ inputSearch.addEventListener('change', displayMatches)
 inputSearch.addEventListener('keyup', displayMatches)
 
 
+// Hide search results if no value in input tag
 
-// document.querySelector('.search').addEventListener('focus', (event) => {
-// //   event.target.style.background = 'red'; 
-//   suggestions.style.fontSize = '40px'
-// // console.log(event)
-// });
+inputSearch.addEventListener('blur', hideSearchResult)
+
+function hideSearchResult() {
+    if (inputSearch.value === '') {
+       document.location.reload(true)
+    }
+}
+
+
+
