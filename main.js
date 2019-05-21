@@ -20,6 +20,14 @@ function numberWithCommas(x) {
 
 // Display matches
 function displayMatches() {
+    if (inputSearch.value === '') {
+        suggestions.innerHTML = `
+            <ul>
+                 <li>Filter for a city or a state
+            </ul>
+        `
+    } else {
+       
     const matchArray = findMatches(this.value, cities)
     const html = matchArray.map(place => {
         const regex = new RegExp(this.value, 'gi')
@@ -35,18 +43,10 @@ function displayMatches() {
         `
     }).join('');
     
-    if (!(inputSearch.value === '')) {
-        suggestions.innerHTML = html
-    } else { suggestions.innerHTML = `
-        <ul>
-             <li>Filter for a city or a state
-        </ul>
-    ` }
-}
+    suggestions.innerHTML = html
+}}
 
 const inputSearch = document.querySelector('.search')
 const suggestions = document.querySelector('.suggestions')
 
 inputSearch.addEventListener('input', displayMatches)
-inputSearch.addEventListener('input', displayMatches)
-
